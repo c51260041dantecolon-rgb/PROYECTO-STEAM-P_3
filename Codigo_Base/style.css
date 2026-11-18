@@ -1,0 +1,268 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap");
+
+:root {
+    --oceano: #0b3a53;        /* azul profundo del Pacífico */
+    --mar: #1a7f95;           /* turquesa de la bahía */
+    --buganvilia: #c4246a;    /* acento: botones y enlace activo */
+    --buganvilia-oscuro: #9e1a54;
+    --arena: #eef3f2;         /* fondo general, blanco frío */
+    --tinta: #16262e;         /* texto */
+    --blanco: #ffffff;
+
+    --fuente-titulos: "Fraunces", Georgia, "Times New Roman", serif;
+    --fuente-texto: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+    --ancho: 1040px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--tinta);
+    background: var(--arena);
+}
+
+.integrantes {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.integrantes h2 {
+    font-size: 30px;
+    color: #087e8b;
+}
+
+.contenedor-integrantes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.integrante {
+    background-color: #eafafa;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.integrante img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.integrante h3 {
+    color: #087e8b;
+}
+
+.integrante p {
+    color: #333;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 700px) {
+    .contenedor-integrantes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .contenedor-integrantes {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--buganvilia);
+    outline-offset: 3px;
+}
+
+/* ---------- Navegación ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--oceano);
+    box-shadow: 0 2px 12px rgba(11, 58, 83, 0.35);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.75rem;
+    margin: 0;
+    padding: 0.35rem 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.85rem 0.15rem;
+    color: #d6e8ee;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+    color: var(--blanco);
+    border-bottom-color: var(--mar);
+}
+
+nav a.active {
+    color: var(--blanco);
+    border-bottom-color: var(--buganvilia);
+}
+
+nav a:focus-visible {
+    outline-color: var(--blanco);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 4rem 1.25rem;
+    text-align: center;
+    color: var(--blanco);
+    background:
+        linear-gradient(180deg, rgba(11, 58, 83, 0.55) 0%, rgba(11, 58, 83, 0.8) 100%),
+        url("images/la quebrada(portada).jpg") center / cover no-repeat,
+        var(--oceano);
+}
+
+.hero h1 {
+    margin: 0 0 0.75rem;
+    max-width: 16ch;
+    font-family: var(--fuente-titulos);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.hero p {
+    margin: 0 0 2rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: #e3f0f4;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.95rem 2rem;
+    background: var(--buganvilia);
+    color: var(--blanco);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background: var(--buganvilia-oscuro);
+    transform: translateY(-2px);
+}
+
+.cta-button:focus-visible {
+    outline-color: var(--blanco);
+}
+
+/* ---------- Contenido ---------- */
+.content-section {
+    padding: 3.5rem 0 4rem;
+}
+
+.content-section h2 {
+    margin: 0 0 1rem;
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    color: var(--oceano);
+}
+
+.content-section p {
+    max-width: 65ch;
+    margin: 0 0 1.5rem;
+}
+
+/* Galería de imágenes */
+.image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: 280px;          
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(11, 58, 83, 0.18);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+    nav ul {
+        gap: 0 1.1rem;
+    }
+
+    nav a {
+        padding: 0.7rem 0.1rem;
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .image img {
+        height: 220px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .cta-button,
+    nav a {
+        transition: none;
+    }
+}

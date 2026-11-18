@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión - Coffe Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Playas.html">Playas</a></li>
+                    <li><a href="gastronomia.html" class="active">Gastronomia</a></li>
+                    <li><a href="cultura.html">cultura</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>                    
+                    <li><a href="integrantes-del-equipo.html">integrantes-del-equipo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Gastronomia</h2>
+            <p style="text-align: center; font-size: 1.2em; max-width: 800px; margin: 0 auto;">
+                La gastronomía de Acapulco es un festín de sabores del mar, herencia guerrerense y sazón costeño. Comer aquí es parte esencial de la experiencia de viaje, combinando platos icónicos cocinados a la leña con la frescura de la pesca del día.
+            </p>
+
+            <div class="carousel">
+  <div class="slides fade">
+    <img src="images/pescado a la talla (gastronomia).jpg" alt="pescado a la talla">
+  </div>
+  <div class="slides fade">
+    <img src="images/ceviche acapulco(gastronomia).jpg" alt="ceviche muy rico">
+  </div>
+  <div class="slides fade">
+    <img src="images/vuelve a la vida(gastronomia).jpg" alt="platillo de mariscos muy rico">
+  </div>
+  <div class="slides fade">
+    <img src="images/pozole acapulco (gastronomia).jpg" alt="pozolito bien rico yami yam">
+  </div>
+  <div class="slides fade">
+    <img src="images/chilate(gastronomia).jpg" alt="chilate">
+  </div>
+
+  <!-- Controles -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Puntos indicadores -->
+<div class="dots-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+let slideIndex = 0;
+let slideTimer;
+
+function showSlides() {
+  const slides = document.getElementsByClassName("slides");
+  const dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active-dot";
+  slideTimer = setTimeout(showSlides, 4000); // cada 4 segundos
+}
+
+function plusSlides(n) {
+  clearTimeout(slideTimer);
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  clearTimeout(slideTimer);
+  slideIndex = n - 1;
+  showSlides();
+}
+
+document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+
+
+        </section>
+    </main>
+
+</body>
+</html>

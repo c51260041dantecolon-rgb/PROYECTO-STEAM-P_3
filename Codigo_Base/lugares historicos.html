@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lugares-historicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Playas.html">Playas</a></li>
+                    <li><a href="gastronomia.html">Gastronomia</a></li>
+                    <li><a href="cultura.html">cultura</a></li>
+                    <li><a href="lugares historicos.html" class="active">lugares historicos</a></li> 
+                    <li><a href="integrantes-del-equipo.html">integrantes-del-equipo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-section contacto">
+            <h2>Lugares historicos en Acapulco</h2>
+            <div class="content-flex">
+                <div class="text">
+                    <h3>Acapulco guarda una gran riqueza histórica por haber sido el principal puerto comercial de la Nueva España con el Galeón de Manila</h3>
+                    <p>
+                        <strong>Fuerte de San diego:</strong> Construcción militar en forma de estrella del siglo XVII que albergó el Museo Histórico de Acapulco, clave para la defensa contra la piratería.
+                    </p>
+                    <p>
+                        <strong>Zócalo de Acapulco (Plaza Juan Álvarez):</strong>El corazón político y social del puerto, rodeado de árboles de mango y frente a la antigua catedral.
+                    </p>
+                    <p>
+                    <strong>Catedral de Nuestra Señora de la Soledad:</strong>Edificio religioso con una peculiar arquitectura de influencias moriscas y bizantinas frente a la plaza principal
+                    </p>
+                    <p>
+                        <strong>Fortín Álvarez:</strong> Pequeña fortificación del siglo XIX ubicada en los barrios históricos que hoy funciona para actividades culturales.
+                    </p>
+                    <p>
+                        <strong>La Diana Cazadora:</strong> Icónica escultura de bronce en forma de flechadora de las estrellas, inaugurada en los años setenta sobre la avenida Costera Miguel Alemán
+                    </p>
+                </div>
+                    <main class="container">
+        <section class="content-section">
+            <div class="carousel">
+  <div class="slides fade">
+    <img src="images/fuerte de san diego.jpg" alt="fuerte de san diego">
+  </div>
+  <div class="slides fade">
+    <img src="images/catedral acapulco.jpg" alt="catedral de nuestra señora de la Soledad">
+  </div>
+  <div class="slides fade">
+    <img src="images/fortin alvarez.jpg" alt="fortin alvarez">
+  </div>
+  <div class="slides fade">
+    <img src="images/la diana cazadora.jpg" alt="la diana cazadora">
+  </div>
+
+  <!-- Controles -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Puntos indicadores -->
+<div class="dots-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+let slideIndex = 0;
+let slideTimer;
+
+function showSlides() {
+  const slides = document.getElementsByClassName("slides");
+  const dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active-dot";
+  slideTimer = setTimeout(showSlides, 4000); // cada 4 segundos
+}
+
+function plusSlides(n) {
+  clearTimeout(slideTimer);
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  clearTimeout(slideTimer);
+  slideIndex = n - 1;
+  showSlides();
+}
+
+document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+        </section>
+    </main>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
