@@ -219,7 +219,7 @@ nav a:focus-visible {
     margin: 0 0 1.5rem;
 }
 
-/* Galería de imágenes */
+
 .image {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -265,4 +265,37 @@ nav a:focus-visible {
     nav a {
         transition: none;
     }
+}
+
+
+#aerolineas {
+    padding: 25px;
+    line-height: 1.7;
+}
+
+#aerolineas h2 {
+    color: #087e8b;
+    text-align: center;
+}
+
+#aerolineas h3 {
+    color: #087e8b;
+    margin-top: 25px;
+}
+
+#aerolineas ol {
+    padding-left: 30px;
+}
+
+#aerolineas li {
+    margin-bottom: 15px;
+}
+
+#aerolineas li h4 {
+    color: #086788;
+    margin-bottom: 5px;
+}
+
+#aerolineas p {
+    text-align: justify;
 }
